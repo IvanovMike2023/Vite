@@ -9,14 +9,17 @@ export const instance = axios.create({
 export const DecksAPI={
   getDecks(){
     return instance.get<DecksType>('v2/decks')
+  },
+  addDecks(params:AddDeckParams){
+    return instance.post<Decks>('v1/decks',params)
   }
 }
 
 export type DecksType = {
-  "items": Arrayitems[]
+  "items": Decks[]
   "pagination":  Pagination
   }
-export type Arrayitems=
+export type Decks =
   {
     "author": Autor
     "id": string
@@ -28,7 +31,9 @@ export type Arrayitems=
     "updated": string
     "cardsCount": number
   }
-
+export type AddDeckParams={
+    name:string
+}
 export type Autor={
   "id": string
   "name": string
