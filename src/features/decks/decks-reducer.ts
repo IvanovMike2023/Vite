@@ -10,12 +10,10 @@ const initialState = {
 type DecksState = typeof initialState
 
 export const decksReducer = (state: DecksState = initialState, action: DecksActions): DecksState => {
-    //console.log(state)
     switch (action.type) {
         case 'SET-DECKS':
             return {...state, decks: action.data}
         case 'SET-NAME-DECKS':
-            console.log(action.deck)
             return {...state,decks: [action.deck,...state.decks]}
 
         default:
