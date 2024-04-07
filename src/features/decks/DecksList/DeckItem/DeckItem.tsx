@@ -7,6 +7,7 @@ type DeckProps = {
 const TEST_ACC_NAME = 'kukus'
 
 export const DeckItem = ({ deck }: DeckProps) => {
+    //console.log(deck.author.name)
   const isTestingDeck = deck.author.name === TEST_ACC_NAME
 
   return (
